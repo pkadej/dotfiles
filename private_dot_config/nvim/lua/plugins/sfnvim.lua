@@ -15,7 +15,7 @@ return {
   -- This flag enable/disable these hotkeys defined
   -- It's highly recommended to set this to `false` and define your own key mappings
   -- Set to `true` if you don't mind any potential key mapping conflicts with your own
-  enable_hotkeys = true,
+  enable_hotkeys = false,
 
   -- this setting takes effect only when You have "enable_hotkeys = true"(i.e. use default supplied hotkeys).
   -- In the default hotkeys, some hotkeys are on "project level" thus always enabled. Examples: "set default org", "fetch org info".
