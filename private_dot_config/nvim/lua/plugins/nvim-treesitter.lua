@@ -19,13 +19,16 @@ return {
 
   build = ':TSUpdate',
   config = function()
+    -- New nvim-treesitter stores queries in runtime/queries/ - add to rtp so Neovim can find them
+    vim.opt.rtp:prepend(vim.fn.stdpath('data') .. '/lazy/nvim-treesitter/runtime')
+
     vim.filetype.add({
       extension = {
         log = "sflog",
       },
     })
 
-    require("nvim-treesitter.configs").setup({
+    require("nvim-treesitter").setup({
       ensure_installed = { "sflog", "apex", "bash", "haskell", "nix", "rust", "soql", "sosl", "lua", "vim", "vimdoc", "markdown" },
       auto_install = true,
 

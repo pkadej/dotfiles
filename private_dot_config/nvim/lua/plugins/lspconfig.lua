@@ -22,7 +22,13 @@ return {
 	apex_enable_semantic_errors = false, -- Whether to allow Apex Language Server to surface semantic errors
 	apex_enable_completion_statistics = false, -- Whether to allow Apex Language Server to collect telemetry on code completion usage    
     });
-    local servers = { "html", "apex_ls" }
+    vim.lsp.config('ts_ls', {
+      cmd = { 'typescript-language-server', '--stdio' },
+      filetypes = { 'typescript', 'typescriptreact', 'javascript', 'javascriptreact' },
+      root_markers = { 'tsconfig.json', 'package.json', '.git' },
+    })
+
+    local servers = { "html", "apex_ls", "ts_ls" }
     vim.lsp.enable(servers)
     
     -- Użyj 'gd' do skoku do definicji
